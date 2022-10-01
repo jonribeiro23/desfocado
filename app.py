@@ -12,7 +12,7 @@ f = []
 for (dirpath, dirnames, filenames) in walk('./img'):
     f = filenames
 
-bar = Bar('Processing', max=20)
+bar = Bar('Processing', max=len(f))
 
 
 for photo in f:

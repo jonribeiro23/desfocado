@@ -4,4 +4,6 @@ lib/
 share/
 pyvenv.cfg
 *.JPG
-
+lib64
+Scripts
+credentials.py
