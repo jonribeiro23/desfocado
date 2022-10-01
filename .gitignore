@@ -7,3 +7,4 @@ pyvenv.cfg
 lib64
 Scripts
 credentials.py
+*.pyc
