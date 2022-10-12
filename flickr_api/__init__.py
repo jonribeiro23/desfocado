@@ -2,16 +2,22 @@ import flickrapi
 from credentials import FLICKR_KEY, FLICKR_SECRET, USER_ID
 import json
 import webbrowser
+from os import walk
+from progress.spinner import MoonSpinner
 
 class FlickerUpload:
-    def __init__(self) -> None:
+    def __init__(self, folder) -> None:
         self.flickr = flickrapi.FlickrAPI(FLICKR_KEY, FLICKR_SECRET)
         self.user_id = USER_ID
+        self.folder = folder
 
         self._verify_permissions()
 
-    def upload(self, photo):
-        return self.flickr.upload(photo)
+    def upload(self):
+        with MoonSpinner('Processing…') as bar:
+            for (dirpath, dirnames, filenames) in walk(self.folder):
+                for photo in filenames:
+                    self.flickr.upload(f"{dirpath}/{photo}")
 
     def _verify_permissions(self):
         if not self.flickr.token_valid(perms='write'):
