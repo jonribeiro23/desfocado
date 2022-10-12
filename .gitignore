@@ -1,3 +1,4 @@
+__pycache__/
 bin/
 include/
 lib/
@@ -8,3 +9,8 @@ lib64
 Scripts
 credentials.py
 *.pyc
+test.json
+instance/
+.webassets-cache
+__pycache__/credentials.cpython-310.pyc
+flickr_api/__pycache__/__init__.cpython-310.pyc
