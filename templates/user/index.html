@@ -4,41 +4,20 @@
 
 {% block body %}
 
-<style>
-    img {
-        /* width: 300px;
-        height: 200px; */
-        max-width: 400px;
-        margin: 10px;
-        object-fit: cover;
-        object-position: bottom;
-        transition: 0.5s;
-    }
-
-    img:hover {
-        cursor: pointer;
-        opacity: 0.5;
-        transition: 0.5s;
-    }
-
-    .photo-container {
-        justify-content: center;
-        display: flex;
-        /* max-width: 1200px; */
-        width: 100%;
-        flex-wrap: wrap;
-        background-color: black;
-    }
-</style>
-
-<div class="photo-container">
-    <img src="https://picsum.photos/800/800">
-    <img src="https://picsum.photos/800/800">
-    <img src="https://picsum.photos/800/800">
-    <img src="https://picsum.photos/800/800">
-    <img src="https://picsum.photos/800/800">
-    <img src="https://picsum.photos/800/800">
-    <img src="https://picsum.photos/800/800">
+<div class="back-black">
+    <div class="container">
+        <div class="row">
+            <div class="col txt-center">
+                <h1 class="mx-auto my-5">Inconformados</h1>
+            </div>
+        </div>
+    </div>
+    
+    <div class="photo-container">
+        {% for photo in photos %}
+            <img src="{{ photo['url'] }}">
+        {% endfor %}
+    </div>
 </div>
 
 {% endblock %}
