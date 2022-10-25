@@ -12,5 +12,7 @@ credentials.py
 test.json
 instance/
 .webassets-cache
-__pycache__/credentials.cpython-310.pyc
+__pycache__
+controller/*/__pycache__
+__pycache__/*
 flickr_api/__pycache__/__init__.cpython-310.pyc

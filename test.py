@@ -5,12 +5,31 @@ from pprint import pprint
 import os.path
 from os import walk
 from seleciona_photo import SelecionaPhotos
+import pymongo
 
-t = Flickr()
-up = FlickerUpload('./upload')
+from credentials import MONGO_URL
 
-selecionador = SelecionaPhotos('./img')
-selecionador.selecionar()
+def flickr_test():
+    t = Flickr()
 
-print(up.upload())
+    up = FlickerUpload('./upload')
+    # t.delete_all()
+
+    # Selecionar e fazer upload
+    selecionador = SelecionaPhotos('./img')
+    selecionador.selecionar()
+
+    print(up.upload())
+
+
+def db_test():
+    # set a 5-second connection timeout
+    client = pymongo.MongoClient(MONGO_URL, serverSelectionTimeoutMS=5000)
+
+    try:
+        print(client.server_info())
+    except Exception:
+        print("Unable to connect to the server.")
+
+
 
