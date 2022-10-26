@@ -15,9 +15,11 @@
     
     <div class="photo-container">
         {% for photo in photos %}
-            <img src="{{ photo['url'] }}">
+            <img class="gallery-item img-home" src="{{ photo['url'] }}">
         {% endfor %}
     </div>
 </div>
+
+<script src="{{ url_for('static', filename='js/lightbox.js') }}"></script>
 
 {% endblock %}
