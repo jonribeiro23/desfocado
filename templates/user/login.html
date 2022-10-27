@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %} Entrar {% endblock %}
+
+{% block body %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}">
+
+<div class="container">
+    <form action="{{ url_for('logar') }}" method="post" class="login-form">
+        <div class="login-group span-2">
+            <label class="ice" for="usuario">Usuario</label>
+            <input type="text" name="usuario" id="usuario">
+        </div>
+
+        <div class="login-group span-2">
+            <label class="ice" for="senha">Senha</label>
+            <input type="password" name="senha" id="senha">
+        </div>
+
+        <div class="login-group my-3">
+            <button class="btn btn-outline-info">Entrar</button>
+        </div>
+    </form>
+</div>
+
+{% endblock %}

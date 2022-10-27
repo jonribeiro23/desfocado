@@ -9,6 +9,14 @@ app.secret_key = "testing"
 def index():
     return Home.index()
 
+@app.route('/login', methods=['GET'])
+def login():
+    return Home.login()
+
+@app.route('/logar', methods=['GET'])
+def logar():
+    return Home.logar()
+
 
 if __name__ == "__main__":
   app.run(debug=True)

@@ -1,0 +1,66 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary-color: #4a47a3;
+    --text-color: #2a2b2c;
+    --secondary-color: #c9c8e3;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: black;
+}
+
+label {
+    display: block;
+}
+
+input, button {
+    box-shadow: none;
+    font: inherit;
+    width: 100%;
+}
+
+:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(138, 236, 249);
+    border: none;
+    border-radius: 2px;
+}
+
+.ice {
+    color: #1e3744;
+    margin: 1px solid black;
+}
+
+.login-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 600px;
+    max-width: 90%;
+    background-color: white;
+    display: grid;
+    grid: aut0 / 1fr 1fr;
+    column-gap: 1rem;
+    row-gap: 2rem;
+    padding: 3rem;
+    box-shadow: 0 0.75rem 2rem 0 rgb(181, 215, 237);
+    font-size: 1.125rem;
+}
+
+#login-txt {
+    color: white;
+}
